@@ -81,7 +81,7 @@ echo $result; // will output 5
 
 // or...
 
-$result = $sandbox->run('echo intval($_SANDBOX["arg1"]) * 2;', array('arg1' => '10'));
+$result = $sandbox->run("echo intval(\$_SANDBOX['arg1']) * 2;", array('arg1' => '10'));
 
 echo $result; // 20
 ```
