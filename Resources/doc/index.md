@@ -21,7 +21,7 @@ Add PhpSandboxBundle in your composer.json:
 
 Now tell composer to download the bundle by running the command:
 
-```
+```bash
 $ php composer.phar update gayalab/phpsandboxbundle
 ```
 
@@ -31,7 +31,7 @@ Composer will install the bundle to your project's `vendor/gayalab` directory.
 
 Enable the bundle in the kernel:
 
-```
+```php
 <?php
 // app/AppKernel.php
 
@@ -48,7 +48,7 @@ public function registerBundles()
 
 Add the following configuration to your `config.yml` specifying the full path of your php executable.
 
-```
+```yaml
 # app/config/config.yml
 gaya_php_sandbox:
     php_settings:
