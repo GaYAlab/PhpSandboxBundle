@@ -81,7 +81,7 @@ echo $result; // will output 5
 
 // or...
 
-$result = $sandbox->run("echo intval(\$_SANDBOX['arg1']) * 2;", array('arg1' => '10'));
+$result = $sandbox->run('echo intval($_SANDBOX["arg1"]) * 2;', array('arg1' => '10'));
 
 echo $result; // 20
 ```
@@ -97,7 +97,7 @@ The code is executed in a separated process
 
 $variables = array('arg1' => '3');
 
-$result = $sandbox->runStandalone('echo intval($_SERVER['arg1']) * 2;');
+$result = $sandbox->runStandalone('echo intval($_SERVER["arg1"]) * 2;');
 
 echo $result; // 6
 ```
