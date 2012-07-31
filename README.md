@@ -60,7 +60,9 @@ gaya_php_sandbox:
 
 ## Examples
 
-### Run PHP Code in the current environment (sharing functions, classes and propagating errors/exceptions)
+### Run PHP Code in the current environment
+
+Note: sharing functions, classes and propagating errors/exceptions (like eval)
 
 ```php
 <?php
@@ -79,12 +81,15 @@ echo $test->x; // will output 5
 
 // or...
 
-$result = $sandbox->run('echo 3 * 2;');
+$result = $sandbox->run('echo intval($_SANDBOX["arg1"]) * 2;', array('arg1' => '10'));
 
-echo $result; // 6
+echo $result; // 20
 ```
 
-### Run PHP Code in a separate sandbox (without class/functions sharing and without errors propagating)
+### Run PHP Code in a separate sandbox
+
+Note: without class/functions sharing and without errors propagating
+The code is executed in a separated process
 
 ```php
 <?php
@@ -118,7 +123,10 @@ catch (PhpSandboxNotice $e)
 }
 ```
 
-### Run PHP Code in background (process forking, so without class/functions sharing)
+### Run PHP Code in background
+
+Note: process forking, so without class/functions sharing and without errors propagating
+The code is executed in a separated child process
 
 ```php
 $sandbox->runInBackground
