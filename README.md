@@ -89,6 +89,7 @@ echo $result; // 20
 ### Run PHP Code in a separate sandbox
 
 Note: without class/functions sharing and without errors propagating
+
 The code is executed in a separated process
 
 ```php
@@ -126,6 +127,7 @@ catch (PhpSandboxNotice $e)
 ### Run PHP Code in background
 
 Note: process forking, so without class/functions sharing and without errors propagating
+
 The code is executed in a separated child process
 
 ```php
