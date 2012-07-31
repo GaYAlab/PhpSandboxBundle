@@ -135,6 +135,6 @@ $sandbox->runInBackground
 (
 	'imagecopyresized(/* ... */)',
 	array('arg1', 'arg2'),
-	true // TRUE means 'wait for child response | FALSE don't wait
+	true // TRUE means "wait for child response" | FALSE don't wait
 );
 ```
