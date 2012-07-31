@@ -63,6 +63,8 @@ gaya_php_sandbox:
 ### Run PHP Code in the current environment (sharing functions, classes and propagating errors/exceptions)
 
 ```php
+<?php
+
 class Test
 {
 	public $x;
@@ -80,4 +82,49 @@ echo $test->x; // will output 5
 $result = $sandbox->run('echo 3 * 2;');
 
 echo $result; // 6
+```
+
+### Run PHP Code in a separate sandbox (without class/functions sharing and without errors propagating)
+
+```php
+<?php
+
+$variables = array('arg1' => '3');
+
+$result = $sandbox->runStandalone('echo intval($_SERVER['arg1']) * 2;');
+
+echo $result; // 6
+```
+
+Another example:
+
+```php
+<?php
+
+use Gaya\PhpSandboxBundle\Exception\PhpSandboxNotice;
+use Gaya\PhpSandboxBundle\Exception\PhpSandboxWarning;
+use Gaya\PhpSandboxBundle\Exception\PhpSandboxError;
+
+// ...
+
+try
+{
+	$php = '$arr = array(1, 2, 3);';
+	$sandbox->runStandalone('echo $arr[100];');
+}
+catch (PhpSandboxNotice $e)
+{
+	echo "Notice occurred: " . $e->getMessage();
+}
+```
+
+### Run PHP Code in background (process forking, so without class/functions sharing)
+
+```php
+$sandbox->runInBackground
+(
+	'imagecopyresized(/* ... */)',
+	array('arg1', 'arg2'),
+	true // TRUE means 'wait for child response | FALSE don't wait
+);
 ```
