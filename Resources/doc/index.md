@@ -14,9 +14,11 @@ This version of the bundle requires Symfony 2.1.
 Add PhpSandboxBundle in your composer.json:
 
 ```
+
 "require": {
 	"gayalab/phpsandboxbundle": "*"
 }
+
 ```
 
 Now tell composer to download the bundle by running the command:
