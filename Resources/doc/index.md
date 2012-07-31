@@ -75,9 +75,9 @@ class Test
 // ... inside a controller
 
 $sandbox = $this->container->get('gaya_php_sandbox');
-$sandbox->run('$test = new Test(); $text->x = 5;');
+$result = $sandbox->run('$test = new Test(); $text->x = 5; echo $test->x;');
 
-echo $test->x; // will output 5
+echo $result; // will output 5
 
 // or...
 
