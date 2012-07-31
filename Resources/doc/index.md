@@ -1,6 +1,9 @@
 Getting Started With PhpSandboxBundle
 =====================================
 
+With this bundle you can run PHP Code in a sandbox or in the current environment.
+Otherwise you can use it for multi-tasking purposes running child processes in background.
+
 ## Prerequisites
 
 This version of the bundle requires Symfony 2.1.
@@ -46,11 +49,35 @@ public function registerBundles()
 
 ### Step 3: Configure the bundle
 
-Add the following configuration to your `config.yml` specifying the full path of your php executable.
+Add the following configuration to your `config.yml` specifying the full path of your php executable:
 
 ```yaml
 # app/config/config.yml
 gaya_php_sandbox:
     php_settings:
         binary: /usr/bin/php # on Ubuntu 12.04
+```
+
+## Examples
+
+### Run PHP Code in the current environment (sharing functions, classes and propagating errors/exceptions)
+
+```php
+class Test
+{
+	public $x;
+}
+
+// ... inside a controller
+
+$sandbox = $this->container->get('gaya_php_sandbox');
+$sandbox->run('$test = new Test(); $text->x = 5;');
+
+echo $test->x; // will output 5
+
+// or...
+
+$result = $sandbox->run('echo 3 * 2;');
+
+echo $result; // 6
 ```
