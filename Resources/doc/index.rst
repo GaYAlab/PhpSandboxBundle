@@ -5,23 +5,23 @@ Getting Started With PhpSandboxBundle
 
 This version of the bundle requires Symfony 2.1.
 
+
 ## Installation
+
 
 ### Step 1: Download PhpSandboxBundle using composer
 
 Add PhpSandboxBundle in your composer.json:
 
-```js
-{
-    "require": {
-        "gayalab/phpsandboxbundle": "*"
-    }
+```
+"require": {
+	"gayalab/phpsandboxbundle": "*"
 }
 ```
 
 Now tell composer to download the bundle by running the command:
 
-``` bash
+```
 $ php composer.phar update gayalab/phpsandboxbundle
 ```
 
@@ -31,16 +31,16 @@ Composer will install the bundle to your project's `vendor/gayalab` directory.
 
 Enable the bundle in the kernel:
 
-``` php
+```
 <?php
 // app/AppKernel.php
 
 public function registerBundles()
 {
-    $bundles = array(
-        // ...
-        new Gaya\PhpSandboxBundle\GayaPhpSandboxBundle(),
-    );
+	$bundles = array(
+		// ...
+		new Gaya\PhpSandboxBundle\GayaPhpSandboxBundle(),
+	);
 }
 ```
 
@@ -48,7 +48,7 @@ public function registerBundles()
 
 Add the following configuration to your `config.yml` specifying the full path of your php executable.
 
-``` yaml
+```
 # app/config/config.yml
 gaya_php_sandbox:
     php_settings:
