@@ -1,0 +1,4 @@
+services:
+    gaya_php_sandbox:
+        class: Gaya\PhpSandboxBundle\Services\PhpSandbox
+        arguments: [@service_container]
