@@ -1,0 +1,26 @@
+{
+    "name": "gayalab/phpsandboxbundle",
+    "type": "symfony-bundle",
+    "description": "GaYA PhpSandboxBundle",
+    "keywords": ["PHP Sandbox, Multitasking"],
+    "homepage": "https://github.com/GaYAlab",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Francesco Casula",
+            "email": "fra.casula@gmail.com"
+        },
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.1.*",
+    },
+    "require-dev": {
+        "symfony/yaml": "2.1.*",
+    },
+    "autoload": {
+        "psr-0": { "Gaya\\PhpSandboxBundle": "" }
+    },
+    "target-dir": "Gaya/PhpSandboxBundle"
+}
