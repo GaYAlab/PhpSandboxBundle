@@ -97,7 +97,7 @@ The code is executed in a separated process
 
 $variables = array('arg1' => '3');
 
-$result = $sandbox->runStandalone('echo intval($_SERVER["arg1"]) * 2;');
+$result = $sandbox->runStandalone('echo intval($_SERVER["arg1"]) * 2;', $variables);
 
 echo $result; // 6
 ```
