@@ -9,11 +9,21 @@ Otherwise you can use it for multi-tasking purposes running child processes in b
 This version of the bundle requires Symfony 2.1.
 
 
-
 ## Installation
 
 
-### Step 1: Download PhpSandboxBundle using composer
+### Step 1: Configure the bundle
+
+Add the following configuration to your `config.yml` specifying the full path of your php executable:
+
+```yaml
+# app/config/config.yml
+gaya_php_sandbox:
+    php_settings:
+        binary: /usr/bin/php # on Ubuntu 12.04
+```
+
+### Step 2: Download PhpSandboxBundle using composer
 
 Add PhpSandboxBundle in your composer.json:
 
@@ -31,7 +41,7 @@ $ php composer.phar update gayalab/phpsandboxbundle
 
 Composer will install the bundle to your project's `vendor/gayalab` directory.
 
-### Step 2: Enable the bundle
+### Step 3: Enable the bundle
 
 Enable the bundle in the kernel:
 
@@ -46,17 +56,6 @@ public function registerBundles()
 		new Gaya\PhpSandboxBundle\GayaPhpSandboxBundle(),
 	);
 }
-```
-
-### Step 3: Configure the bundle
-
-Add the following configuration to your `config.yml` specifying the full path of your php executable:
-
-```yaml
-# app/config/config.yml
-gaya_php_sandbox:
-    php_settings:
-        binary: /usr/bin/php # on Ubuntu 12.04
 ```
 
 ## Examples
