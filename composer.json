@@ -9,7 +9,7 @@
         {
             "name": "Francesco Casula",
             "email": "fra.casula@gmail.com"
-        },
+        }
     ],
     "minimum-stability": "dev",
     "require": {
