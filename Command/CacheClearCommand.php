@@ -8,6 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 
 use Gaya\PhpSandboxBundle\Services\PhpSandbox;
 
+/**
+ * @author Francesco Casula <fra.casula@gmail.com>
+ */
 class CacheClearCommand extends ContainerAwareCommand
 {
 	protected function configure()
